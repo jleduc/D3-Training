@@ -1,0 +1,61 @@
+
+
+.corner
+{
+		visibility:hidden;
+
+}
+
+.r1, .c1 /* column and row headers for data tables */
+{ 							
+		color: #000000;
+		background-color: #FFFFFF; 
+                font-family: verdana, arial, helvetica; 
+                font-weight: normal; 
+                border-left: 1px solid white; 
+                border-top: 1px solid white; 
+                border-bottom: 1px solid #BBBBBB; 
+                border-right: 1px solid #BBBBBB; 
+                padding:0px 0px 0px 0px; 
+                font-size: 8pt; }
+
+
+.r1 /* first row for data tables */
+{ 
+text-align: center;
+}
+
+
+.c1 /* first column for data tables */
+{ text-align: right; white-space: nowrap;
+
+}
+
+
+
+.ocell 
+{               padding:0px 0px 0px 0px; 
+		border: 1px solid #E0E7EE;
+		background-color: #CCCCCC; 
+}
+
+
+.rh2 /* row/column headers for data tables */
+{ 
+		background-color: #E0E7EE; 
+		font-weight: bold
+}
+
+.greenRow
+{
+		padding:0px 0px 0px 0px; 
+		border: 1px solid #E0E7EE;
+		background-color: #5A6351;
+}
+
+.hoverClass
+{
+		padding:0px 0px 0px 0px; 
+		border: 1px solid #E0E7EE;
+		background-color: #FFFFE0;
+}

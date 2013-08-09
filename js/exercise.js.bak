@@ -1,0 +1,14 @@
+$(document).ready(function(){
+		var $content=$('.ocell');
+		
+		//console.log($content);
+		
+		for (i=0; i<$content.length; i++) {
+			//console.log($content[i].innerHTML);
+			
+			if ($content[i].innerHTML="$50") {
+				$content[i].outerHTML.style("background-color", "blue")
+			};
+		}
+		
+}); 
