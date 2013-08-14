@@ -7,7 +7,6 @@ $(document).ready(function(){
 			if(isNaN(number)) {return 0;} else {return number;}
 	};
 
-
 	$('.ocell').each(function() {
 			if (tableValue($(this))>=0)  { $(this).css("color", "blue"); }
 		});
@@ -49,10 +48,49 @@ $(document).ready(function(){
 			else if (row_class=="rh2")
 					{	$(this).append('<th class="r1" align="center"></th>');	}
 
-			else	{	$(this).append('<th class="r1" align="right">$'+row_total+'</th>');	}
+			else	{	$(this).append('<td class="ocell" style="color: #000000;" align="right">$'+row_total+'</td>');}
 
 			$(this).children().addClass(row_class);
 		});
+
+	var clonedTable = $('#Financial_summary_c').clone();
+	$('.othertable').append(clonedTable);
+
+
+	$('tr',clonedTable).each(function(){
+		var total=0;
+
+		$('td',$(this)).each(function(i,r){
+
+			if (i!==0)
+			{
+				var newvalue= tableValue($(this))*i;
+				total += newvalue;
+				$(this).html('$'+newvalue);//replace $(this) content with new value;
+				if (newvalue===0) {$(this).html('');}
+			}
+
+			if (i===20)
+			{
+				$(this).html('$'+ total);
+			}
+		});
+	});
+
+	var secondClonedTable = $('#Financial_summary_c').clone();
+	$('.thirdtable').append(secondClonedTable);
+
+	$('tr',secondClonedTable).each(function(){
+		$('td',$(this)).each(function(i,r){
+			if (i!==0)
+			{
+				var first=$('.table').children('tr').children('td').val();
+				var second=$('.othertable').children('tr').children('td').val();				
+				console.log(i);
+			}
+
+		});
+	});
 
 
 });

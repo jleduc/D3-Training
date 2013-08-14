@@ -9,7 +9,7 @@
 	<!--Include jquery libraries-->
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/exercise.js"></script>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<!--script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script-->
 	
 
 	
@@ -536,6 +536,12 @@
 			</tr>
 		</table>
 	</div>
+	
+	
+	<br/>
+	<br/>	
+	
+	<div class="othertable" xmlns:msxsl="urn:schemas-microsoft-com:xslt"></div>
 
 </body>
 </html> 
