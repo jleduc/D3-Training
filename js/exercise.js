@@ -53,40 +53,45 @@ $(document).ready(function(){
 			$(this).children().addClass(row_class);
 		});
 
-	var clonedTable = $('#Financial_summary_c').clone();
-	$('.othertable').append(clonedTable);
+
+	var secondIntTable = $('#Financial_summary_c').clone();
+	$('.deuxieme').append(secondIntTable);
 
 
-	$('tr',clonedTable).each(function(){
+	$('tr',secondIntTable).each(function(i,n){
 		var total=0;
 
-		$('td',$(this)).each(function(i,r){
+		$('td',$(this)).each(function(j,r){
 
-			if (i!==0)
+			if (j!==0 && j!==20)
 			{
-				var newvalue= tableValue($(this))*i;
+				var newvalue= tableValue($(this))*j;
 				total += newvalue;
 				$(this).html('$'+newvalue);//replace $(this) content with new value;
 				if (newvalue===0) {$(this).html('');}
 			}
 
-			if (i===20)
+
+			else if (j===20)
 			{
 				$(this).html('$'+ total);
 			}
 		});
 	});
 
-	var secondClonedTable = $('#Financial_summary_c').clone();
-	$('.thirdtable').append(secondClonedTable);
+	var secondTable=secondIntTable.attr('id', 'Financial_summary_2');
 
-	$('tr',secondClonedTable).each(function(){
-		$('td',$(this)).each(function(i,r){
-			if (i!==0)
+	var thirdTable = $('#Financial_summary_c').clone();
+	$('.troisieme').append(thirdTable);
+
+	$('tr',thirdTable).each(function(i,n){
+		$('td',$(this)).each(function(j,r){
+			if (j!==0)
 			{
-				var first=$('.table').children('tr').children('td').val();
-				var second=$('.othertable').children('tr').children('td').val();				
-				console.log(i);
+				//var first=$('.table').children('tr').children('td').val();
+				var second=tableValue($('td',secondTable));
+		//		var third=tableValue($(this));
+				console.log(second);
 			}
 
 		});
