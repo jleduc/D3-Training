@@ -59,3 +59,21 @@ text-align: center;
 		border: 1px solid #E0E7EE;
 		background-color: #FFFFE0;
 }
+
+.tooltip 
+{
+		display:none;
+		background:transparent url(css/images/black_arrow_high2.png);
+		font-size:12px;
+		height:190px;
+		width:180px;
+		padding:25px;
+		color:#fff;	
+} 
+
+.tooltip.bottom 
+{
+		background:url(css/images/black_arrow_high2_bottom.png);
+		padding-top:50px;
+		height:170px;
+}

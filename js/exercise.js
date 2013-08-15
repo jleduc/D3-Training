@@ -84,18 +84,49 @@ $(document).ready(function(){
 	var thirdTable = $('#Financial_summary_c').clone();
 	$('.troisieme').append(thirdTable);
 
-	$('tr',thirdTable).each(function(i,n){
-		$('td',$(this)).each(function(j,r){
-			if (j!==0)
-			{
-				//var first=$('.table').children('tr').children('td').val();
-				var second=tableValue($('td',secondTable));
-		//		var third=tableValue($(this));
-				console.log(second);
-			}
+	$('table').each(function(i,n){
+		$('tr',$(this)).each(function(j,r){
+				var rowclass=$(r).children().eq(2).attr('class');
+				if (rowclass!=="rh2") {
+					$('td',$(this)).each(function(k,l){
+						if (k>0) {
+						var first = tableValue($('table:eq(0) tr:eq('+j+') td:eq('+k+')'));
+						var second = tableValue($('table:eq(1) tr:eq('+j+') td:eq('+k+')'));
+						var third = first/second;
+						var result = 0;
+						if (isNaN(third)) {result=0;} else {result=third;}
+						var percent = Math.round((result*100)*100)/100;
+						if (result!==0) {
+						$('table:eq(2) tr:eq('+j+') td:eq('+k+')').html(percent+'%');
+						}
+						}
+						$('table:eq(2) tr:eq('+j+') td:eq('+k+')').tooltip();
 
+					});
+				}
 		});
 	});
+
+	$('#Financial_summary_c').hide();
+	$('#Financial_summary_2').hide();
+
+
+/*		$('#Financial_summary_c tr'.each(function(i,r){
+
+			$('td',$(this)).each(function(j,l){
+
+
+				var second = $('#Financial_summary_2 tr:eq('+i).filter(function(l,m){return l==i}).children('td').filter(function(p.q){return p==j})).text();				
+
+		//		var second = $('#Financial_summary_2 tr').filter(function(l,m){return l==i}).children('td').filter(function(p.q){return p==j})).text();
+				console.log(value);
+
+}
+	});
+	});
+
+*/
+
 
 
 });
