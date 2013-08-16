@@ -110,20 +110,13 @@ $(document).ready(function(){
 	$('#Financial_summary_c').hide();
 	$('#Financial_summary_2').hide();
 
-
-/*		$('#Financial_summary_c tr'.each(function(i,r){
-
-			$('td',$(this)).each(function(j,l){
-
-
-				var second = $('#Financial_summary_2 tr:eq('+i).filter(function(l,m){return l==i}).children('td').filter(function(p.q){return p==j})).text();				
-
-		//		var second = $('#Financial_summary_2 tr').filter(function(l,m){return l==i}).children('td').filter(function(p.q){return p==j})).text();
-				console.log(value);
-
-}
-	});
-	});
+/*
+	$('#Financial_summary_c tr').each(function(i,r){
+		$('td',$(this)).each(function(j,l){
+			var second = $('#Financial_summary_2 tr:eq('+i+')').filter(function(l,m){return l==i;}).children('td').filter(function(p,q){return p==j;}).text();
+			console.log(second);
+		});
+		});
 
 */
 
